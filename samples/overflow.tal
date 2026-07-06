@@ -1,0 +1,25 @@
+! overflow.tal -- exercises the AST overflow pool: 14 statements in one
+! block (the old kids[8] cap would have silently dropped six of them),
+! plus a WHILE loop and an IF/ELSE.
+
+PROC run MAIN;
+BEGIN
+  INT a;
+  INT b;
+  INT c;
+  INT i;
+  a := 1;
+  b := 2;
+  c := 3;
+  c := a + b + c;
+  CALL putint(a);
+  CALL putint(b);
+  CALL putint(c);
+  i := 0;
+  WHILE i < 3 DO
+  BEGIN
+    CALL putint(i);
+    i := i + 1;
+  END;
+  IF c > 5 THEN CALL putint(99) ELSE CALL putint(0);
+END;

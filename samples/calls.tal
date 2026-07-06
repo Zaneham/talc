@@ -1,0 +1,16 @@
+! calls.tal -- procedures that return values, called in expressions.
+! This is the pattern the switch leans on: proc returns a value, caller
+! uses it inline (e.g. response_code := authorise(pan, amount)).
+
+PROC square(n);
+  INT n;
+BEGIN
+  RETURN n * n;
+END;
+
+PROC run MAIN;
+BEGIN
+  INT x;
+  x := square(5) + square(3);
+  CALL putint(x);
+END;

@@ -1,0 +1,9 @@
+! demo.tal -- the first TAL program compiled by talc, the open TAL compiler.
+! Arithmetic, a local variable, and a call into the runtime.
+
+PROC run MAIN;
+BEGIN
+  INT result;
+  result := (2 + 3) * 4;
+  CALL putint(result);
+END;

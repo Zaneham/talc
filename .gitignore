@@ -1,0 +1,10 @@
+# Build output
+*.exe
+*.o
+/talc
+/build/
+
+# C generated from the samples (regenerate with `make test`)
+/calls.c
+/demo.c
+/overflow.c
