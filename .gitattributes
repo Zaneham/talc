@@ -1,0 +1,3 @@
+# Keep these LF so the suite behaves the same on Windows and Linux.
+*.sh          text eol=lf
+*.expected    text eol=lf

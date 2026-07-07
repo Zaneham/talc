@@ -1,0 +1,15 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build talc
+        run: make CC=gcc
+      - name: Run samples against their golden output
+        run: make test
